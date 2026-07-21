@@ -330,6 +330,20 @@ section {
   align-items: center;
 }
 
+@media (max-width: 1023px) {
+  .header-actions .btn-nav {
+    display: none;
+  }
+  
+  .header-container {
+    padding-left: 0;
+  }
+  
+  .logo {
+    margin-left: -10px;
+  }
+}
+
 .logo img {
   height: 74px;
   width: auto;
