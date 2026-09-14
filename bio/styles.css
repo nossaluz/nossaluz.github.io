@@ -1,0 +1,308 @@
+/* ==========================================================================
+   NOSSA LUZ — LANDING PAGE DE LINKS (BIO)
+   ========================================================================== */
+
+/* DESIGN TOKENS */
+:root {
+  --primary: #D45D2A;         /* Cobre metálico / Laranja queimado */
+  --secondary: #C5A880;       /* Dourado / Champagne */
+  --bg-main: #120E0C;         /* Fundo escuro principal */
+  --bg-secondary: #1F1714;    /* Fundo escuro de apoio / Cards */
+  --text-light: #F9F6F0;      /* Bege claro / Off-white */
+  --text-muted: #A3958F;      /* Texto secundário / Cinza quente */
+  --graphite: #2B2522;        /* Grafite */
+  
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-btn: 14px;
+}
+
+/* RESET & BASE */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--bg-main);
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-main);
+  position: relative;
+  overflow-x: hidden;
+  padding: 24px 16px;
+}
+
+/* AMBIENT RADIAL LIGHT EFFECT */
+.ambient-light {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140vw;
+  max-width: 800px;
+  height: 600px;
+  background: radial-gradient(
+    circle at 50% 25%,
+    rgba(212, 93, 42, 0.16) 0%,
+    rgba(197, 168, 128, 0.08) 35%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* MAIN CONTAINER (DESKTOP & MOBILE BOUNDARIES) */
+.bio-container {
+  width: min(100%, 430px);
+  margin: 0 auto;
+  min-height: calc(100svh - 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* HEADER SECTION */
+.bio-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12px;
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+.logo-wrapper {
+  margin-bottom: 14px;
+}
+
+.bio-logo {
+  height: auto;
+  width: 175px;
+  max-width: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px rgba(197, 168, 128, 0.22)) brightness(1.12);
+  transition: var(--transition-smooth);
+}
+
+.bio-slogan {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--secondary);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.bio-description {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.45;
+  max-width: 320px;
+}
+
+/* LINKS / BUTTONS CONTAINER */
+.bio-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* BASE BUTTON STYLES */
+.bio-btn {
+  width: 100%;
+  min-height: 58px;
+  border-radius: var(--radius-btn);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition-smooth);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.btn-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+.btn-text {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  padding: 0 8px;
+}
+
+.btn-arrow {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: var(--transition-smooth);
+}
+
+/* FEATURED BUTTON (SITE OFICIAL - DEGRADE COBRE/DOURADO) */
+.btn-featured {
+  background: linear-gradient(135deg, #D45D2A 0%, #C5A880 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(212, 93, 42, 0.35);
+}
+
+.btn-featured .btn-text {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-featured:hover,
+.btn-featured:focus-visible {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(212, 93, 42, 0.5);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-featured:hover .btn-arrow,
+.btn-featured:focus-visible .btn-arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+.btn-featured:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* SECONDARY BUTTONS (WHATSAPP & LOCALIZAÇÃO) */
+.btn-secondary {
+  background-color: rgba(31, 23, 20, 0.75);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  color: var(--text-light);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn-secondary .btn-icon {
+  color: var(--secondary);
+}
+
+.btn-secondary .icon-whatsapp {
+  color: #25D366; /* Cor característica do WhatsApp com brilho equilibrado */
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: rgba(31, 23, 20, 0.95);
+  border-color: var(--secondary);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 8px 25px rgba(197, 168, 128, 0.2);
+  color: #ffffff;
+}
+
+.btn-secondary:hover .btn-arrow,
+.btn-secondary:focus-visible .btn-arrow {
+  transform: translateX(4px);
+  color: var(--secondary);
+  opacity: 1;
+}
+
+.btn-secondary:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* FOOTER SECTION */
+.bio-footer {
+  text-align: center;
+  padding: 16px 0 8px;
+  width: 100%;
+}
+
+.footer-brand {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+.footer-slogan {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--secondary);
+  opacity: 0.7;
+}
+
+/* ENTRANCE ANIMATIONS (STAGGERED FADE-IN) */
+.bio-header,
+.bio-btn,
+.bio-footer {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeInEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.bio-header { animation-delay: 0.1s; }
+.bio-links .bio-btn:nth-child(1) { animation-delay: 0.25s; }
+.bio-links .bio-btn:nth-child(2) { animation-delay: 0.35s; }
+.bio-links .bio-btn:nth-child(3) { animation-delay: 0.45s; }
+.bio-footer { animation-delay: 0.55s; }
+
+@keyframes fadeInEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE FINE-TUNING */
+@media (max-width: 360px) {
+  body {
+    padding: 16px 12px;
+  }
+  
+  .bio-logo {
+    width: 150px;
+  }
+  
+  .bio-btn {
+    min-height: 52px;
+    padding: 12px 14px;
+  }
+  
+  .btn-text {
+    font-size: 0.88rem;
+  }
+}
