@@ -175,70 +175,94 @@ body {
   transition: var(--transition-smooth);
 }
 
-/* FEATURED BUTTON (SITE OFICIAL - DEGRADE COBRE/DOURADO) */
-.btn-featured {
-  background: linear-gradient(135deg, #D45D2A 0%, #C5A880 100%);
+/* BOTÃO 1: WHATSAPP (VERDE OFICIAL DO WHATSAPP) */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 24px rgba(212, 93, 42, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
 }
 
-.btn-featured .btn-text {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+.btn-whatsapp .btn-icon,
+.btn-whatsapp .icon-whatsapp {
+  color: #ffffff;
 }
 
-.btn-featured:hover,
-.btn-featured:focus-visible {
+.btn-whatsapp:hover,
+.btn-whatsapp:focus-visible {
   transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 12px 30px rgba(212, 93, 42, 0.5);
-  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 
-.btn-featured:hover .btn-arrow,
-.btn-featured:focus-visible .btn-arrow {
+.btn-whatsapp:hover .btn-arrow,
+.btn-whatsapp:focus-visible .btn-arrow {
   transform: translateX(4px);
+  color: #ffffff;
   opacity: 1;
 }
 
-.btn-featured:active {
+.btn-whatsapp:active {
   transform: translateY(-1px) scale(0.99);
 }
 
-/* SECONDARY BUTTONS (WHATSAPP & LOCALIZAÇÃO) */
-.btn-secondary {
-  background-color: rgba(31, 23, 20, 0.75);
-  border: 1px solid rgba(197, 168, 128, 0.35);
-  color: var(--text-light);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+/* BOTÃO 2: LOCALIZAÇÃO (AZUL MAPA / LOCALIZADOR) */
+.btn-location {
+  background: linear-gradient(135deg, #1A73E8 0%, #0D52BF 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(26, 115, 232, 0.35);
 }
 
-.btn-secondary .btn-icon {
-  color: var(--secondary);
-}
-
-.btn-secondary .icon-whatsapp {
-  color: #25D366; /* Cor característica do WhatsApp com brilho equilibrado */
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus-visible {
-  background-color: rgba(31, 23, 20, 0.95);
-  border-color: var(--secondary);
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 8px 25px rgba(197, 168, 128, 0.2);
+.btn-location .btn-icon {
   color: #ffffff;
 }
 
-.btn-secondary:hover .btn-arrow,
-.btn-secondary:focus-visible .btn-arrow {
+.btn-location:hover,
+.btn-location:focus-visible {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(26, 115, 232, 0.5);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn-location:hover .btn-arrow,
+.btn-location:focus-visible .btn-arrow {
   transform: translateX(4px);
-  color: var(--secondary);
+  color: #ffffff;
   opacity: 1;
 }
 
-.btn-secondary:active {
+.btn-location:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* BOTÃO 3: SITE OFICIAL (DEGRADE COBRE/DOURADO DA MARCA) */
+.btn-site {
+  background: linear-gradient(135deg, #D45D2A 0%, #C5A880 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(212, 93, 42, 0.35);
+}
+
+.btn-site .btn-icon {
+  color: #ffffff;
+}
+
+.btn-site:hover,
+.btn-site:focus-visible {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(212, 93, 42, 0.5);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn-site:hover .btn-arrow,
+.btn-site:focus-visible .btn-arrow {
+  transform: translateX(4px);
+  color: #ffffff;
+  opacity: 1;
+}
+
+.btn-site:active {
   transform: translateY(-1px) scale(0.99);
 }
 
