@@ -123,4 +123,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', highlightNavSection);
 
+
+  // --- CARROSSEL DE IMAGENS SEÇÃO NATAL ---
+  const track = document.querySelector('.natal-slider-track');
+  if (track) {
+    const slides = Array.from(track.children);
+    const prevBtn = document.querySelector('.natal-carousel-btn.prev');
+    const nextBtn = document.querySelector('.natal-carousel-btn.next');
+    const dots = document.querySelectorAll('.natal-dot');
+    let currentIndex = 0;
+    let autoSlideTimer = null;
+
+    function goToSlide(index) {
+      if (index < 0) {
+        currentIndex = slides.length - 1;
+      } else if (index >= slides.length) {
+        currentIndex = 0;
+      } else {
+        currentIndex = index;
+      }
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        goToSlide(currentIndex - 1);
+        resetAutoSlide();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        goToSlide(currentIndex + 1);
+        resetAutoSlide();
+      });
+    }
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        goToSlide(idx);
+        resetAutoSlide();
+      });
+    });
+
+    function startAutoSlide() {
+      autoSlideTimer = setInterval(() => {
+        goToSlide(currentIndex + 1);
+      }, 4500);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideTimer);
+      startAutoSlide();
+    }
+
+    startAutoSlide();
+
+    // Pause on mouse hover
+    const carouselWrapper = document.querySelector('.natal-carousel');
+    if (carouselWrapper) {
+      carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoSlideTimer));
+      carouselWrapper.addEventListener('mouseleave', () => startAutoSlide());
+    }
+  }
+
 });

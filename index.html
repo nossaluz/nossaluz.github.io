@@ -492,16 +492,33 @@
       <div class="natal-bg-overlay"></div>
       <div class="container grid-2">
         <div class="natal-visual fade-in-left scroll-trigger">
-          <div class="natal-mosaic-grid">
-            <div class="natal-card card-main">
-              <img src="assets/natal-tunel.jpg" loading="lazy" width="500" height="280" alt="Túnel de luz e árvores gigantes de Natal Nossa Luz" class="natal-img">
-            </div>
-            <div class="natal-thumbs-row">
-              <div class="natal-card">
-                <img src="assets/natal-urso.jpg" loading="lazy" width="250" height="160" alt="Urso Iluminado de Natal Nossa Luz" class="natal-img">
+          <div class="natal-carousel-wrapper">
+            <div class="natal-carousel">
+              <div class="natal-slider-track">
+                <div class="natal-slide">
+                  <img src="assets/natal-tunel.jpg" loading="lazy" width="500" height="375" alt="Túnel de luz e árvores gigantes de Natal Nossa Luz" class="natal-carousel-img">
+                </div>
+                <div class="natal-slide">
+                  <img src="assets/natal-urso.jpg" loading="lazy" width="500" height="375" alt="Urso Iluminado de Natal Nossa Luz" class="natal-carousel-img">
+                </div>
+                <div class="natal-slide">
+                  <img src="assets/natal-arvore-vermelha.jpg" loading="lazy" width="500" height="375" alt="Árvore de Natal Decorada Nossa Luz" class="natal-carousel-img">
+                </div>
               </div>
-              <div class="natal-card">
-                <img src="assets/natal-arvore-vermelha.jpg" loading="lazy" width="250" height="160" alt="Árvore de Natal Decorada Nossa Luz" class="natal-img">
+
+              <!-- Botões de Navegação -->
+              <button class="natal-carousel-btn prev" aria-label="Imagem anterior">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="natal-carousel-btn next" aria-label="Próxima imagem">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+
+              <!-- Indicadores de Paginação -->
+              <div class="natal-carousel-dots">
+                <button class="natal-dot active" aria-label="Ver imagem 1"></button>
+                <button class="natal-dot" aria-label="Ver imagem 2"></button>
+                <button class="natal-dot" aria-label="Ver imagem 3"></button>
               </div>
             </div>
           </div>
