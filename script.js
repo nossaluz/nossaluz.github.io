@@ -190,4 +190,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // --- LIGHTBOX MODAL GALERIA DE PROJETOS ---
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption-text');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  const lightboxOverlay = document.querySelector('.lightbox-overlay');
+
+  if (lightboxModal && lightboxImg) {
+    const galleryWraps = document.querySelectorAll('.gallery-img-wrap');
+
+    galleryWraps.forEach(wrap => {
+      wrap.addEventListener('click', () => {
+        const img = wrap.querySelector('img');
+        const caption = wrap.querySelector('.gallery-caption-overlay span');
+        if (img) {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || '';
+          lightboxCaption.textContent = caption ? caption.textContent : (img.alt || '');
+          lightboxModal.classList.add('active');
+          lightboxModal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('active');
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  }
+
 });
+
