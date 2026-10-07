@@ -1079,7 +1079,7 @@ section {
 .natal-carousel-wrapper {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 560px;
   margin: 0 auto;
 }
 
@@ -1102,9 +1102,15 @@ section {
 .natal-slide {
   flex: 0 0 100%;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 460px;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 576px) {
+  .natal-slide {
+    height: 350px;
+  }
 }
 
 .natal-carousel-img {
