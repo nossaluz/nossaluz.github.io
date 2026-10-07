@@ -679,16 +679,16 @@ section {
 
 .card-small {
   align-self: flex-end;
-  width: 75%;
-  margin-top: -80px;
+  width: 82%;
+  margin-top: -45px;
   position: relative;
   z-index: 5;
-  border: 2px solid rgba(197, 168, 128, 0.35);
+  border: 2px solid rgba(197, 168, 128, 0.4);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .card-small .sobre-img {
-  height: 240px;
+  height: 250px;
 }
 
 .sobre-experience-floating {
