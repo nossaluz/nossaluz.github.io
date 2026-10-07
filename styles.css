@@ -660,6 +660,7 @@ section {
 }
 
 .grid-img-card {
+  position: relative;
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--shadow-premium);
@@ -1862,13 +1863,33 @@ section {
 }
 
 .img-caption-strip {
-  background: rgba(29, 29, 27, 0.88);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  position: absolute;
+  z-index: 10;
+  background: rgba(29, 29, 27, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--text-light);
   font-size: 0.82rem;
-  padding: 8px 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(223, 98, 32, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: calc(100% - 28px);
+}
+
+.card-large .img-caption-strip {
+  top: 14px;
+  left: 14px;
+  bottom: auto;
+}
+
+.card-small .img-caption-strip {
+  bottom: 14px;
+  left: 14px;
+  top: auto;
 }
 
 .diff-card {
