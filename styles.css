@@ -17,21 +17,21 @@
 
 /* CSS VARIABLES & PREMIUM DESIGN TOKENS */
 :root {
-  --primary: #D45D2A;         /* Laranja queimado / Cobre metálico */
-  --primary-rgb: 212, 93, 42;
-  --primary-hover: #b84c1f;
-  --secondary: #C5A880;       /* Dourado elegante / Champagne */
-  --secondary-rgb: 197, 168, 128;
-  --secondary-hover: #b0936b;
+  --primary: #DF6220;         /* Laranja queimado oficial */
+  --primary-rgb: 223, 98, 32;
+  --primary-hover: #c45217;
+  --secondary: #BC8049;       /* Madeira oficial */
+  --secondary-rgb: 188, 128, 73;
+  --secondary-hover: #9e6939;
   
-  --bg-dark: #120E0C;         /* Marrom escuro (Fundo principal) */
-  --bg-card: #1F1714;         /* Marrom de apoio para cards / containers */
-  --bg-light: #F9F6F0;        /* Bege claro (Seção de contraste e luz) */
-  --bg-input: #2B211D;
+  --bg-dark: #1D1D1B;         /* Preto oficial da marca */
+  --bg-card: #272725;         /* Apoio escuro para cards */
+  --bg-light: #E7E5E8;        /* Neutro claro oficial */
+  --bg-input: #292927;
   
-  --text-light: #F9F6F0;      /* Off-white */
-  --text-dark: #2B2522;       /* Grafite / Marrom escuro */
-  --text-muted: #A3958F;      /* Texto secundário / Cinza quente */
+  --text-light: #E7E5E8;      /* Neutro claro para textos em fundo escuro */
+  --text-dark: #1D1D1B;       /* Preto oficial para textos */
+  --text-muted: #A0A0A0;      /* Cinza legivel */
   
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Nunito', 'Inter', system-ui, -apple-system, sans-serif;
@@ -1822,8 +1822,140 @@ section {
   }
 }
 
-@media (min-width: 1200px) {
-  .hero-title {
-    font-size: 4rem;
-  }
+/* COMPLEMENTARY SPEC STYLES FOR EXACT CLIENT COPY */
+.section-desc-center {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-top: 12px;
+  font-weight: 300;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-img-wrap.grid-2-imgs {
+  display: flex;
+  gap: 2px;
+}
+
+.card-img-wrap.grid-2-imgs img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 20px;
+}
+
+.card-feature-list li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.card-btn-wrap {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.img-caption-strip {
+  background: rgba(29, 29, 27, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--text-light);
+  font-size: 0.82rem;
+  padding: 8px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.diff-card {
+  background-color: var(--bg-card);
+  padding: 28px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: var(--transition-smooth);
+}
+
+.diff-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(223, 98, 32, 0.4);
+}
+
+.diff-card-icon {
+  margin-bottom: 16px;
+}
+
+.diff-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.diff-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(29, 29, 27, 0.92) 0%, transparent 100%);
+  padding: 14px 16px;
+  color: var(--text-light);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.gallery-placeholder-card {
+  background: var(--bg-card);
+  border: 2px dashed rgba(223, 98, 32, 0.4);
+  border-radius: var(--border-radius);
+  height: 100%;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+}
+
+.gallery-placeholder-card .placeholder-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.gallery-placeholder-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--secondary);
+  margin-bottom: 6px;
+}
+
+.gallery-placeholder-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.natal-caption-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(29, 29, 27, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-light);
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(223, 98, 32, 0.4);
+  white-space: nowrap;
 }
