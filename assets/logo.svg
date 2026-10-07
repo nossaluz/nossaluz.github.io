@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="380" height="90">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2D2A5"/>
+      <stop offset="50%" stop-color="#C5A880"/>
+      <stop offset="100%" stop-color="#9E6939"/>
+    </linearGradient>
+    <linearGradient id="brandOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DF6220"/>
+      <stop offset="100%" stop-color="#BC8049"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon snippet from official brand SVG -->
+  <g transform="translate(5, 5) scale(0.095)">
+    <path fill="url(#brandOrange)" d="M180.81,649.41l56.22,49.56c52.07-40.49,118.38-57.73,147.24-60.63,58-5.83,121.54,18.94,178.92,69.76,1.15,1.02,2.08,1.84,2.77,2.44l52.79-61.46c-.46-.4-1.08-.95-1.84-1.62-74.49-65.98-159.99-97.84-240.74-89.72-31.06,3.12-127.05,27.91-195.34,91.68Z"/>
+    <path fill="#BC8049" d="M235.75,700.38l-54.94-50.98c35.08-55.86,45.59-123.56,45.59-152.56,0-58.29-31.01-119.04-87.31-171.04-1.13-1.04-2.04-1.88-2.7-2.52l55.87-58.67c.44.42,1.05.98,1.8,1.67,73.1,67.51,113.37,149.39,113.37,230.55,0,31.22-15.05,129.21-71.67,203.54Z"/>
+    <g fill="#DF6220">
+      <path d="M395.16,345.78v-206.3h-70.61v202.27c8.67-1.5,17.56-2.33,26.66-2.33,15.27,0,30.01,2.25,43.95,6.36Z"/>
+      <path d="M567.36,204.32l-61.96-33.86-98.93,179.14c20.31,7.76,38.58,19.65,53.75,34.68l107.14-179.96Z"/>
+      <path d="M683.36,346.98l-35.3-61.96-182.46,104.86c15.97,17.48,27.95,38.65,34.6,62.07l183.16-104.96Z"/>
+      <path d="M713.62,458.65h-211.68c2.7,11.46,4.17,23.38,4.17,35.66s-1.47,24.21-4.17,35.66h211.68v-71.33Z"/>
+    </g>
+  </g>
+
+  <!-- Main Brand Title -->
+  <text x="95" y="52" font-family="'Playfair Display', 'Georgia', serif" font-size="44" font-weight="700" fill="url(#goldGrad)" letter-spacing="0.5">Nossa Luz</text>
+  
+  <!-- Subtitle Slogan -->
+  <text x="96" y="73" font-family="'Nunito', sans-serif" font-size="13.5" font-weight="600" fill="#DF6220" letter-spacing="1.2">ilumina, enfeita e encanta</text>
+</svg>
