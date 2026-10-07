@@ -207,7 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (img) {
           lightboxImg.src = img.src;
           lightboxImg.alt = img.alt || '';
-          lightboxCaption.textContent = caption ? caption.textContent : (img.alt || '');
+          if (caption && caption.textContent.trim()) {
+            lightboxCaption.textContent = caption.textContent;
+            lightboxCaption.style.display = 'block';
+          } else {
+            lightboxCaption.style.display = 'none';
+          }
           lightboxModal.classList.add('active');
           lightboxModal.setAttribute('aria-hidden', 'false');
           document.body.style.overflow = 'hidden';
