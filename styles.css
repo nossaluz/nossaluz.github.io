@@ -200,6 +200,20 @@ ul {
   box-shadow: var(--shadow-glow);
 }
 
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  background-color: #20BA5A;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+  color: #FFFFFF;
+}
+
 .btn-secondary {
   border: 1.5px solid var(--secondary);
   color: var(--secondary);
